@@ -122,7 +122,7 @@ We propose AAPL (Adding Attributes to Prompt Learning), which extracts and decom
 ## Contact
 
 If you have any questions, please create an issue on this repository or contact us at 
-[gahyeon@kentech.ac.kr](mailto: gahyeon@kentech.ac.kr) or [soheekim@kentech.ac.kr](mailto:soheekim@kentech.ac.kr).
+[gahyeon@kentech.ac.kr](mailto:gahyeon@kentech.ac.kr) or [soheekim@kentech.ac.kr](mailto:soheekim@kentech.ac.kr).
 
 ## Acknowledgment
 
