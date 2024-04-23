@@ -1,6 +1,8 @@
 # AAPL: Adding Attributes to Prompt Learning for Vision-Language Models
 
-Authors: *Gahyeon Kim*\* , *Sohee Kim*\*, *Seokju Lee*  (\*: joint first authors)
+Authors: *Gahyeon Kim*\* , *Sohee Kim*\*, *Seokju Lee*  
+
+( \* : joint first authors)
 
 **arXiv paper:** [AAPL : Adding Attributes to Prompt Learning for Vision-Language Models]()
 
@@ -8,7 +10,7 @@ This repository is the official implementation of the CVPR Workshop 2024 paper.
 
 > **Abstract:** *Recent advances in large pre-trained vision-language models have demonstrated remarkable performance on zero-shot downstream tasks. Building upon this, recent studies, such as CoOp and CoCoOp, have proposed the use of prompt learning, where context within a prompt is replaced with learnable vectors, leading to significant improvements over manually crafted prompts. However, the performance improvement for unseen classes is still marginal, and to tackle this problem, data augmentation has been frequently used in traditional zero-shot learning techniques. Through our experiments, we have identified important issues in CoOp and CoCoOp: the context learned through traditional image augmentation is biased toward seen classes, negatively impacting generalization to unseen classes. To address this problem, we propose adversarial token embedding to disentangle low-level visual augmentation features from high-level class information when inducing bias in learnable prompts. Through our novel mechanism called "Adding Attributes to Prompt Learning", [AAPL](), we guide the learnable context to effectively extract text features by focusing on high-level features for unseen classes. We have conducted experiments across 11 datasets, and overall, AAPL shows favorable performances compared to the existing methods in few-shot learning, zero-shot learning, cross-dataset, and domain generalization tasks.*
 
-![CVPRW24_AAPL_teaser](C:\Users\user\Downloads\assets\CVPRW24_AAPL_teaser.png)
+![CVPRW24_AAPL_teaser](C:\Users\user\OneDrive - 한국에너지공과대학교\바탕 화면\AAPL\assets\CVPRW24_AAPL_teaser.png)
 
 >Training the learnable prompt on the class "apple", since the training data mainly consists of red apples, leads to understanding apples as typically red. When a rare "yellow apple” is input, the instance bias may overlook the yellow attribute and incorrectly predict it as a pear. However, AAPL extracts and decomposes attributes from the image, enhancing attribute-specific bias in the semantic features. 
 >This enables robustly improved generalization performance across domains.
