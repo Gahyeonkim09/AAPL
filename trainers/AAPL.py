@@ -131,7 +131,6 @@ class ClipFeatureExtractor(nn.Module):
         return embeds / torch.norm(embeds, dim=1, keepdim=True)
 
     def encode_texts(self, embeds, tokens):
-        # Manually encoder position information.
         outputs = embeds + self.position_embeds
 
         # Pass through Transformer encoder model.
@@ -419,7 +418,6 @@ class AAPL(TrainerX):
         if cfg.TRAINER.AAPL.PREC == "fp32" or cfg.TRAINER.AAPL.PREC == "amp":
             clip_model.float()
 
-        print("Building PARALLEL_AUGLY")
         self.model = PromptLearner(cfg, classnames, clip_model)
         
         print("Turning off gradients in both the image and the text encoder")
@@ -452,11 +450,6 @@ class AAPL(TrainerX):
         self.register_model("PromptLearner", self.model, self.optim, self.sched)
         
         self.scaler = GradScaler() if cfg.TRAINER.COCOOP.PREC == "amp" else None
-
-        device_count = torch.cuda.device_count()
-        if device_count > 1:
-            print(f"Multiple GPUs detected (n_gpus={device_count}), use all of them!")
-            self.model = nn.DataParallel(self.model)
 
     def forward_backward(self, batch):        
         image, label = self.parse_batch_train(batch)

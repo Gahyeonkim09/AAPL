@@ -3,13 +3,11 @@
 # cd ../..
 
 # custom config
-# DATA=/path/to/datasets
-DATA=/SSD2/data/
+DATA=/path/to/datasets
 TRAINER=AAPL_visualize
 
 DATASET=$1
 SEED=$2
-GPU=$3
 
 CFG=vit_b16_c4_ep10_batch1_val
 SHOTS=16
@@ -19,7 +17,7 @@ DIR=output/base2new/train_base/${DATASET}/shots_${SHOTS}/${TRAINER}/${CFG}/seed$
 if [ -d "$DIR" ]; then
     echo "Oops! The results exist at ${DIR} (so skip this job)"
 else
-    CUDA_VISIBLE_DEVICES=${GPU} \
+    CUDA_VISIBLE_DEVICES=2 \
     python train.py \
     --root ${DATA} \
     --seed ${SEED} \

@@ -9,12 +9,11 @@ TRAINER=AAPL
 DATASET=$1
 SEED=$2
 
-CFG=vit_b16_c4_ep10_batch1
-# CFG=vit_b16_c4_ep10_batch1_ctxv1
+CFG=vit_b16_c4_ep10_batch1_ctxv1
 SHOTS=16
 
-DIR=output/base2new/train_base/${DATASET}/shots_${SHOTS}/${TRAINER}/${CFG}/seed${SEED}
 
+DIR=output/evaluation/${TRAINER}/${CFG}_${SHOTS}shots/${DATASET}/seed${SEED}
 if [ -d "$DIR" ]; then
     echo "Oops! The results exist at ${DIR} (so skip this job)"
 else
@@ -25,6 +24,7 @@ else
     --dataset-config-file configs/datasets/${DATASET}.yaml \
     --config-file configs/trainers/${TRAINER}/${CFG}.yaml \
     --output-dir ${DIR} \
-    DATASET.NUM_SHOTS ${SHOTS} \
-    DATASET.SUBSAMPLE_CLASSES base
+    --model-dir output/imagenet/${TRAINER}/${CFG}_${SHOTS}shots/seed${SEED} \
+    --load-epoch 10 \
+    --eval-only
 fi

@@ -177,4 +177,5 @@ pyrightconfig.json
 
 # Custom
 output/
+Dassl.pytorch/
 train.sh

@@ -3,11 +3,11 @@
 # cd ../..
 
 # custom config
-DATA=/SSD2/data/
+DATA=/path/to/datasets
 TRAINER=AAPL
+
 DATASET=$1
 SEED=$2
-GPU=$3
 
 CFG=vit_b16_c4_ep10_batch1
 SHOTS=16
@@ -21,7 +21,6 @@ DIR=output/base2new/test_${SUB}/${COMMON_DIR}
 if [ -d "$DIR" ]; then
     echo "Oops! The results exist at ${DIR} (so skip this job)"
 else
-    CUDA_VISIBLE_DEVICES=${GPU} \
     python train.py \
     --root ${DATA} \
     --seed ${SEED} \
