@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# cd ../..
+
+# custom config
+DATA=/path/to/datasets
+TRAINER=AAPL
+
+DATASET=imagenet
+SEED=$1
+
+CFG=vit_b16_c4_ep10_batch1
+SHOTS=16
+
+
+DIR=output/${DATASET}/${TRAINER}/${CFG}_${SHOTS}shots/seed${SEED}
+if [ -d "$DIR" ]; then
+    echo "Oops! The results exist at ${DIR} (so skip this job)"
+else
+    python train.py \
+    --root ${DATA} \
+    --seed ${SEED} \
+    --trainer ${TRAINER} \
+    --dataset-config-file configs/datasets/${DATASET}.yaml \
+    --config-file configs/trainers/${TRAINER}/${CFG}.yaml \
+    --output-dir ${DIR} \
+    DATASET.NUM_SHOTS ${SHOTS}
+fi
