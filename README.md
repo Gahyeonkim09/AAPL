@@ -1,6 +1,6 @@
 # AAPL: Adding Attributes to Prompt Learning for Vision-Language Models
 
-Authors: *Gahyeon Kim*\* , *Sohee Kim*\*, *Seokju Lee*  
+Authors: *Gahyeon Kim*\*, *Sohee Kim*\*, *Seokju Lee*  
 
 ( \* : joint first authors)
 
