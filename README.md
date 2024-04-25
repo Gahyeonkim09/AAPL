@@ -15,6 +15,18 @@ This repository is the official implementation of the CVPR Workshop 2024 paper.
 >Training the learnable prompt on the class "apple", since the training data mainly consists of red apples, leads to understanding apples as typically red. When a rare "yellow apple” is input, the instance bias may overlook the yellow attribute and incorrectly predict it as a pear. However, AAPL extracts and decomposes attributes from the image, enhancing attribute-specific bias in the semantic features. 
 >This enables robustly improved generalization performance across domains.
 
+
+### If you find our work useful in your research, please consider citing our paper :
+ 
+```bibtex
+@inproceedings{kim2024aapl,
+  title={AAPL: Adding Attributes to Prompt Learning for Vision-Language Models},
+  author={Kim, Gahyeon and Kim, Sohee and Lee, Seokju},
+  booktitle={CVPR Workshop},
+  year={2024}
+}
+```
+
 ---
 
 ## How to Run
