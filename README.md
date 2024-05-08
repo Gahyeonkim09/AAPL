@@ -4,11 +4,11 @@ Authors: *Gahyeon Kim*\*, *Sohee Kim*\*, *Seokju Lee*
 
 ( \* : joint first authors)
 
-**arXiv paper:** [AAPL: Adding Attributes to Prompt Learning for Vision-Language Models]()
+**arXiv paper:** [AAPL: Adding Attributes to Prompt Learning for Vision-Language Models](https://arxiv.org/abs/2404.16804)
 
 This repository is the official implementation of the CVPR Workshop 2024 paper.
 
-> **Abstract:** *Recent advances in large pre-trained vision-language models have demonstrated remarkable performance on zero-shot downstream tasks. Building upon this, recent studies, such as CoOp and CoCoOp, have proposed the use of prompt learning, where context within a prompt is replaced with learnable vectors, leading to significant improvements over manually crafted prompts. However, the performance improvement for unseen classes is still marginal, and to tackle this problem, data augmentation has been frequently used in traditional zero-shot learning techniques. Through our experiments, we have identified important issues in CoOp and CoCoOp: the context learned through traditional image augmentation is biased toward seen classes, negatively impacting generalization to unseen classes. To address this problem, we propose adversarial token embedding to disentangle low-level visual augmentation features from high-level class information when inducing bias in learnable prompts. Through our novel mechanism called "Adding Attributes to Prompt Learning", [AAPL](), we guide the learnable context to effectively extract text features by focusing on high-level features for unseen classes. We have conducted experiments across 11 datasets, and overall, AAPL shows favorable performances compared to the existing methods in few-shot learning, zero-shot learning, cross-dataset, and domain generalization tasks.*
+> **Abstract:** *Recent advances in large pre-trained vision-language models have demonstrated remarkable performance on zero-shot downstream tasks. Building upon this, recent studies, such as CoOp and CoCoOp, have proposed the use of prompt learning, where context within a prompt is replaced with learnable vectors, leading to significant improvements over manually crafted prompts. However, the performance improvement for unseen classes is still marginal, and to tackle this problem, data augmentation has been frequently used in traditional zero-shot learning techniques. Through our experiments, we have identified important issues in CoOp and CoCoOp: the context learned through traditional image augmentation is biased toward seen classes, negatively impacting generalization to unseen classes. To address this problem, we propose adversarial token embedding to disentangle low-level visual augmentation features from high-level class information when inducing bias in learnable prompts. Through our novel mechanism called "Adding Attributes to Prompt Learning", [AAPL](https://arxiv.org/abs/2404.16804), we guide the learnable context to effectively extract text features by focusing on high-level features for unseen classes. We have conducted experiments across 11 datasets, and overall, AAPL shows favorable performances compared to the existing methods in few-shot learning, zero-shot learning, cross-dataset, and domain generalization tasks.*
 
 <img src="assets/CVPRW24_AAPL_teaser.png" alt="CVPRW24_AAPL_teaser"/>
 
@@ -17,7 +17,7 @@ This repository is the official implementation of the CVPR Workshop 2024 paper.
 
 
 ### If you find our work useful in your research, please consider citing our paper :
- 
+
 ```bibtex
 @inproceedings{kim2024aapl,
   title={AAPL: Adding Attributes to Prompt Learning for Vision-Language Models},
@@ -117,13 +117,13 @@ We propose AAPL (Adding Attributes to Prompt Learning), which extracts and decom
 
    - The difference between CoCoOp, which incorporates instance bias, and AAPL, which utilizes decomposed attribute bias, lies in their augmentation strategies. AAPL's approach leads to the overall improvement in generalization performance across datasets.
 
-     | Name                     | Base Acc. | Novel Acc. |    HM     |
-     | :----------------------- | :-------: | :--------: | :-------: |
-     | [CLIP]()                 |   69.34   | **74.22**  |   71.70   |
-     | [CoOp]()                 | **82.69** |   63.22    |   71.66   |
-     | [CoCoOp]()               |   80.47   |   71.69    |   75.83   |
-     | CoCoOp with augmentation |   79.25   |   70.89    |   74.38   |
-     | [AAPL]() (ours)          |   80.27   |   72.17    | **76.01** |
+     | Name                                            | Base Acc. | Novel Acc. |    HM     |
+     | :---------------------------------------------- | :-------: | :--------: | :-------: |
+     | [CLIP](https://arxiv.org/abs/2103.00020)        |   69.34   | **74.22**  |   71.70   |
+     | [CoOp](https://arxiv.org/abs/2109.01134)        | **82.69** |   63.22    |   71.66   |
+     | [CoCoOp](https://arxiv.org/abs/2203.05557)      |   80.47   |   71.69    |   75.83   |
+     | CoCoOp with augmentation                        |   79.25   |   70.89    |   74.38   |
+     | [AAPL](https://arxiv.org/abs/2404.16804) (ours) |   80.27   |   72.17    | **76.01** |
 
 2. **Augmentation Profiling**
 
